@@ -1,0 +1,18 @@
+<%= high_chart("my_graph", @bargraph) %>
+
+<h1> Tweets About Obama </h1>
+<div id="tweet_table">
+<table>
+  <tr>
+    <th width="200" align="left">Time</th>
+    <th width="150" align="left">Count</th>
+  </tr>
+
+<% for i in 0..@facet_time.count %>
+    <tr>
+      <td><%= @facet_time[i] %></td>
+      <td><%= @facet_count[i] %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
