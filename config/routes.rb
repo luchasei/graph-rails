@@ -1,6 +1,12 @@
 GraphApp::Application.routes.draw do
+  resources :graph
+  resources :graphs
   root :to => 'graph#index'
-  get "graph/index"
+#resource :graph do
+ #   match '/change_interval' => 'graph#change_interval', :as => :change_interval, :via => :post
+   # match '/set_owner' => 'companies#set_owner', :as => :set_owner
+#end
+  #get 'graph/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

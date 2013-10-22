@@ -1,8 +1,22 @@
 <%= high_chart("my_graph", @bargraph) %>
 
-<h1> Tweets About Obama </h1>
+<div class="form_row" align="center">
+    <%= form_tag("/graph", method: "get") do %>
+	<%= radio_button_tag(:interval, "minute") %>
+	<%= label_tag(:interval_minute, "Minute") %>
+	<%= radio_button_tag(:interval, "hour") %>
+	<%= label_tag(:interval_hour, "Hour") %>
+	<%= radio_button_tag(:interval, "month") %>
+	<%= label_tag(:interval_month, "Month") %>
+	<%= radio_button_tag(:interval, "year") %>
+	<%= label_tag(:interval_year, "Year") %>
+    <%= submit_tag "Submit" %>
+<% end %>
+</div>
+
+<h1 align="center"> Tweets About Obama </h1>
 <div id="tweet_table">
-<table>
+<table align="center">
   <tr>
     <th width="200" align="left">Time</th>
     <th width="150" align="left">Count</th>
